@@ -1,0 +1,12 @@
+.indexComponent{
+    text-align: center;
+    background-color: #ebebeb;
+    margin: 0 auto;
+    
+}
+
+.eslogan{
+    font-family: 'Rowdies', cursive;
+    font-size: 25px;
+    color: rgb(73, 117, 119);
+}

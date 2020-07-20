@@ -1,0 +1,36 @@
+<div class='calculadoraComponent'>
+    <p class='mensajeLetrasAnchas'>
+        Tasa del día
+    </p>
+    <p class='mensajeBandera'>
+        toca la bandera para escoger el tipo de moneda
+    </p>
+    <div class='calculadoraBanderas'>
+
+        <div *ngFor='let pais of tarifaGlobal'>
+            <input (click)="cambiarTarifa(pais)" 
+            type="image" src={{pais.imagen}} 
+            alt="">
+        </div>
+
+    </div>
+    <p class='mensajeCotizacion'>  1 {{monedaPuntual}} = {{cotizacionPuntual}} Bs.S</p>
+    <div>
+        <div>
+            <p class='mensajeColocar'>coloca el monto a enviar</p>
+        </div>
+        <div>
+            <input 
+            type="number" 
+            placeholder="ingresar el monto" 
+            name='cantidadColocada' 
+            [(ngModel)]="cantidadColocada"
+            class='colocarMonto'
+            autofocus=on>
+        </div>
+    </div>
+    <p class='mensajeLetrasAnchas'>Cantidad total</p>
+    
+    <p class='montoTotal' *ngIf='cantidadColocada != 0'>{{cantidadColocada * cotizacionPuntual}} Bs.S</p>
+    <a href=""><button type="submit" class='enviarBoton'>ENVIAR</button></a>
+</div>
